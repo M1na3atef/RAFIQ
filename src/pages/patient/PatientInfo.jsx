@@ -278,6 +278,7 @@ function PatientInfo() {
                                 name="age"
                                 type="number"
                                 value={patient.age}
+                                min={0}
                                 onChange={handleChange}
                                 placeholder="Age"
                             />
@@ -410,8 +411,6 @@ function PatientInfo() {
                                 name="emergencyContact"
 
                                 value={patient.emergencyContact}
-                                minlength={11}
-                                maxlength={13}
                                 onChange={handleChange}
 
                                 placeholder="Phone Number"
