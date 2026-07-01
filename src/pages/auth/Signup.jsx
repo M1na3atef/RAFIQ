@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { createPatientProfile } from "@/services/patientService";
-import { registerUser } from "@/services/authService";
+import {
+    registerUser,
+    loginWithGoogle,
+} from "@/services/authService";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -67,7 +70,27 @@ function Signup() {
         }
 
     };
+    const handleGoogleSignup = async () => {
 
+        try {
+
+            const result = await loginWithGoogle();
+
+            await createPatientProfile(result.user);
+
+            toast.success("Logged in successfully.");
+
+            navigate("/");
+
+        }
+
+        catch (error) {
+
+            toast.error(error.message);
+
+        }
+
+    };
     return (
 
         <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4">
@@ -190,6 +213,7 @@ function Signup() {
                     <Button
                         variant="outline"
                         className="w-full"
+                        onClick={handleGoogleSignup}
                     >
 
                         Continue with Google

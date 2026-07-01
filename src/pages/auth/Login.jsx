@@ -2,11 +2,8 @@ import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { loginUser } from "@/services/authService";
-import { loginWithGoogle } from "@/services/authService";
+import { loginUser ,loginWithGoogle} from "@/services/authService";
 import { createPatientProfile } from "@/services/patientService";
-import { get, ref } from "firebase/database";
-import { db } from "@/firebase/firebase";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -64,27 +61,17 @@ function Login() {
 
             const userCredential = await loginWithGoogle();
 
-            const user = userCredential.user;
-
-            const snapshot = await get(
-
-                ref(db, `users/${user.uid}`)
-
-            );
-
-            if (!snapshot.exists()) { // Check if the user profile exists in the database
-
-                await createPatientProfile(user); // lw awl mra l user by3ml create ll profile bta3o
-
-            }
-
+            await createPatientProfile(userCredential.user);
+            toast.success("Login Successfully");
             navigate("/");
+
+
 
         }
 
         catch (error) {
 
-            alert(error.message);
+            toast.error(error.message);
 
         }
 
@@ -115,9 +102,11 @@ function Login() {
 
                     <div>
 
-                        <Label>Email</Label>
+                        <Label htmlFor="email">Email</Label>
 
                         <Input
+
+                            id="email"
 
                             name="email"
 
@@ -135,9 +124,11 @@ function Login() {
 
                     <div>
 
-                        <Label>Password</Label>
+                        <Label htmlFor="password">Password</Label>
 
                         <Input
+
+                            id="password"
 
                             name="password"
 

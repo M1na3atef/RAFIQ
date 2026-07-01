@@ -1,6 +1,12 @@
-function QuickAction({ title }) {
+function QuickAction({
+
+    title,
+
+    onClick,
+
+}) {
     return (
-        <button className="bg-white rounded-2xl shadow-md p-6 text-lg font-semibold hover:bg-blue-600 hover:text-white transition">
+        <button onClick={onClick} className="bg-white rounded-2xl shadow-md p-6 text-lg font-semibold hover:bg-blue-600 hover:text-white transition">
             {title}
         </button>
     );

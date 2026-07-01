@@ -146,7 +146,7 @@ function Navbar() {
 
             <DropdownMenuSeparator />
 
-            <DropdownMenuItem onClick={() => navigate("/")}>
+            <DropdownMenuItem onClick={() => navigate("/patient")}>
 
               My Profile
 
