@@ -31,10 +31,6 @@ export const createPatientProfile = async (user) => {
             notes: "",
         },
 
-        wheelchair: {
-            connected: false,
-            status: "offline",
-        },
     });
 
 };
