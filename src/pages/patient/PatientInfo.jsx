@@ -410,7 +410,8 @@ function PatientInfo() {
                                 name="emergencyContact"
 
                                 value={patient.emergencyContact}
-
+                                minlength={11}
+                                maxlength={13}
                                 onChange={handleChange}
 
                                 placeholder="Phone Number"
