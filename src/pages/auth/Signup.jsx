@@ -99,7 +99,7 @@ function Signup() {
 
                 <CardHeader>
 
-                    <CardTitle className="text-center text-3xl">
+                    <CardTitle className="text-center text-3xl"style={{fontFamily: "'Cormorant Garamond', serif",fontWeight: "700",letterSpacing: "2px",}}>
 
                         RAFIQ
 

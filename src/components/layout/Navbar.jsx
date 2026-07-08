@@ -70,7 +70,7 @@ function Navbar() {
 
         <div>
 
-          <h1 className="font-bold text-xl whitespace-nowrap">
+          <h1 className="font-bold text-xl whitespace-nowrap" style={{fontFamily: "'Cormorant Garamond', serif",fontWeight: "700"}}>
 
             RAFIQ
 
