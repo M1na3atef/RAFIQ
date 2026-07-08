@@ -62,7 +62,7 @@ function Navbar() {
 
           src={logo}
 
-          alt="Prime Ride"
+          alt="RAFIQ"
 
           className="w-10 h-10 object-contain"
 
@@ -72,13 +72,13 @@ function Navbar() {
 
           <h1 className="font-bold text-xl whitespace-nowrap">
 
-            Prime Ride
+            RAFIQ
 
           </h1>
 
           <p className="hidden lg:block text-xs text-slate-500">
 
-            Smart Wheelchair System
+            Responsive Ai For Independent Quality-of-life
 
           </p>
 

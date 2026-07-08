@@ -101,7 +101,7 @@ function Signup() {
 
                     <CardTitle className="text-center text-3xl">
 
-                        Prime Ride
+                        RAFIQ
 
                     </CardTitle>
 
